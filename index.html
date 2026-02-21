@@ -23,6 +23,30 @@
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
             <img src="./images/1.png" alt="" width="350" class="flag__right">
+        <audio id="player" loop>
+  <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<div style="text-align: center; margin: 20px;">
+  <button id="musicToggle" style="background: #ff69b4; color: white; padding: 15px 30px; border-radius: 50px; border: none; font-family: 'Poppins', sans-serif; cursor: pointer; font-size: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    🎵 Start the Music
+  </button>
+</div>
+
+<script>
+  const song = document.getElementById("player");
+  const btn = document.getElementById("musicToggle");
+
+  btn.addEventListener("click", function() {
+    if (song.paused) {
+      song.play();
+      btn.innerHTML = "⏸ ";
+    } else {
+      song.pause();
+      btn.innerHTML = "🎵 ";
+    }
+  });
+</script>
         </div>
         <div class="content">   
             <div class="left">
