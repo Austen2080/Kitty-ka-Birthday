@@ -19,6 +19,47 @@
 </head>
 
 <body>
+    <audio id="player" loop>
+  <source src="birthday-song.mp3" type="audio/mpeg">
+</audio>
+
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 10000;">
+  <button id="musicToggle" style="
+    background: #ff69b4; 
+    color: white; 
+    padding: 12px 20px; 
+    border-radius: 50px; 
+    border: 2px solid #fff; 
+    font-family: 'Poppins', sans-serif; 
+    cursor: pointer; 
+    font-size: 14px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  ">
+    🎵 <span id="btnText">Start the Music</span>
+  </button>
+</div>
+
+<script>
+  const song = document.getElementById("player");
+  const btn = document.getElementById("musicToggle");
+  const btnText = document.getElementById("btnText");
+
+  btn.addEventListener("click", function() {
+    if (song.paused) {
+      song.play();
+      btnText.innerHTML = "Pause Music";
+      btn.style.background = "#ff4d94"; // Changes color slightly when playing
+    } else {
+      song.pause();
+      btnText.innerHTML = "Resume Music";
+      btn.style.background = "#ff69b4";
+    }
+  });
+</script>
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
