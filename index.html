@@ -39,7 +39,7 @@
     gap: 8px;
     white-space: nowrap;
   ">
-    🎵 <span id="btnText">Start the Music</span>
+    <span id="btnText">Set the vibe (Click)</span>
   </button>
 </div>
 
@@ -51,11 +51,11 @@
   btn.addEventListener("click", function() {
     if (song.paused) {
       song.play();
-      btnText.innerHTML = "Pause Music";
+      btnText.innerHTML = "⏸";
       btn.style.background = "#ff4d94"; // Changes color slightly when playing
     } else {
       song.pause();
-      btnText.innerHTML = "Resume Music";
+      btnText.innerHTML = "🎵";
       btn.style.background = "#ff69b4";
     }
   });
